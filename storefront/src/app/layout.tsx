@@ -6,6 +6,7 @@ import { getBaseURL } from "@lib/util/env"
 import "../styles/globals.css"
 import React from "react"
 import { WebMCPProvider } from "@lib/webmcp/WebMCPProvider"
+import DeviceLogger from "./DeviceLogger"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
@@ -27,6 +28,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <main className="relative">{props.children}</main>
         <SpeedInsights />
         <WebMCPProvider />
+        <DeviceLogger />
       </body>
     </html>
   )

@@ -30,7 +30,12 @@ import type FashionModuleService from '../modules/fashion/service';
 import type { MaterialModelType } from '../modules/fashion/models/material';
 
 async function getImageUrlContent(url: string) {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    headers: {
+      Accept: 'image/*,*/*',
+      'User-Agent': 'Mozilla/5.0 (compatible; Medusa/2.0)',
+    },
+  });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch image "${url}": ${response.statusText}`);
@@ -38,7 +43,7 @@ async function getImageUrlContent(url: string) {
 
   const arrayBuffer = await response.arrayBuffer();
 
-  return Buffer.from(arrayBuffer).toString('binary');
+  return Buffer.from(arrayBuffer).toString('base64');
 }
 
 export default async function seedDemoData({ container }: ExecArgs) {
