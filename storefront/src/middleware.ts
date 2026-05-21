@@ -1,5 +1,4 @@
 import { HttpTypes } from "@medusajs/types"
-import { notFound } from "next/navigation"
 import { NextRequest, NextResponse } from "next/server"
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
@@ -30,7 +29,7 @@ async function getRegionMap() {
     }).then((res) => res.json())
 
     if (!regions?.length) {
-      notFound()
+      return regionMapCache.regionMap
     }
 
     // Create a map of country codes to regions.
@@ -92,30 +91,25 @@ export async function middleware(request: NextRequest) {
   const regionMap = await getRegionMap()
   const countryCode = regionMap && (await getCountryCode(request, regionMap))
 
-  const urlHasCountryCode =
-    countryCode && request.nextUrl.pathname.split("/")[1].includes(countryCode)
+  if (!countryCode) {
+    return NextResponse.next()
+  }
 
-  // check if one of the country codes is in the url
+  const urlHasCountryCode = request.nextUrl.pathname
+    .split("/")[1]
+    ?.toLowerCase()
+    .includes(countryCode)
+
   if (urlHasCountryCode) {
     return NextResponse.next()
   }
 
   const redirectPath =
     request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname
+  const queryString = request.nextUrl.search ?? ""
+  const redirectUrl = `${request.nextUrl.origin}/${countryCode}${redirectPath}${queryString}`
 
-  const queryString = request.nextUrl.search ? request.nextUrl.search : ""
-
-  let redirectUrl = request.nextUrl.href
-
-  let response = NextResponse.redirect(redirectUrl, 307)
-
-  // If no country code is set, we redirect to the relevant region.
-  if (!urlHasCountryCode && countryCode) {
-    redirectUrl = `${request.nextUrl.origin}/${countryCode}${redirectPath}${queryString}`
-    response = NextResponse.redirect(`${redirectUrl}`, 307)
-  }
-
-  return response
+  return NextResponse.redirect(redirectUrl, 307)
 }
 
 export const config = {

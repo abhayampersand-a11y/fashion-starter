@@ -17,7 +17,7 @@
     "seed": "medusa exec ./src/scripts/seed.ts",
     "start": "medusa start",
     "dev": "medusa develop",
-    "reset-db": "node -e \"const{Client}=require('pg');async function r(){const c=new Client({host:'localhost',port:5432,user:'postgres',password:'admin',database:'postgres'});await c.connect();await c.query('SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname=$$medusa$$ AND pid<>pg_backend_pid()');await c.query('DROP DATABASE IF EXISTS medusa');await c.query('CREATE DATABASE medusa');console.log('medusa database reset');await c.end();}r().catch(e=>console.error(e.message))\"",
+    "reset-db": "node src/scripts/reset-db.mjs",
     "fresh-seed": "yarn reset-db && yarn medusa db:migrate && yarn seed",
     "emails:dev": "email dev --dir=src/modules/resend/emails",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
