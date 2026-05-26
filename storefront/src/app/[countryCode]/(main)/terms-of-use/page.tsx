@@ -4,8 +4,9 @@ import { listRegions } from "@lib/data/regions"
 import { Layout, LayoutColumn } from "@/components/Layout"
 
 export const metadata: Metadata = {
-  title: "Terms of Use",
-  description: "Learn about our terms of use",
+  title: "Terms of Use | Riti Vastra",
+  description:
+    "Riti Vastra Terms of Use — terms and conditions governing your use of our website, products, and services.",
 }
 export async function generateStaticParams() {
   const countryCodes = await listRegions().then((regions: StoreRegion[]) =>
@@ -36,7 +37,7 @@ export default function TermsOfUsePage() {
         end={{ base: 13, lg: 11, xl: 10 }}
       >
         <h1 className="text-lg md:text-2xl mb-16 md:mb-25">
-          Terms of Use for Sofa Society
+          Terms of Use for Riti Vastra
         </h1>
       </LayoutColumn>
       <LayoutColumn
@@ -45,7 +46,7 @@ export default function TermsOfUsePage() {
         className="article"
       >
         <p>
-          Welcome to Sofa Society. These Terms of Use govern your access to and
+          Welcome to Riti Vastra. These Terms of Use govern your access to and
           use of our website, products, and services. By accessing or using our
           platform, you agree to be bound by these terms and conditions. If you
           do not agree with any part of these terms, please do not use our
@@ -114,7 +115,7 @@ export default function TermsOfUsePage() {
         </p>
         <h2>5. Limitation of Liability:</h2>
         <p>
-          To the maximum extent permitted by law, Sofa Society and its
+          To the maximum extent permitted by law, Riti Vastra and its
           affiliates, officers, directors, employees, and agents shall not be
           liable for any direct, indirect, incidental, consequential, or special
           damages arising out of or in connection with your use of our website,
@@ -122,7 +123,7 @@ export default function TermsOfUsePage() {
         </p>
         <h2>6. Indemnification:</h2>
         <p>
-          You agree to indemnify, defend, and hold harmless Sofa Society and its
+          You agree to indemnify, defend, and hold harmless Riti Vastra and its
           affiliates, officers, directors, employees, and agents from and
           against any claims, liabilities, damages, losses, and expenses,
           including reasonable attorney&apos;s fees, arising out of or in
@@ -131,7 +132,7 @@ export default function TermsOfUsePage() {
         </p>
         <h2>7. Modifications to the Terms:</h2>
         <p>
-          You agree to indemnify, defend, and hold harmless Sofa Society and its
+          You agree to indemnify, defend, and hold harmless Riti Vastra and its
           affiliates, officers, directors, employees, and agents from and
           against any claims, liabilities, damages, losses, and expenses,
           including reasonable attorney&apos;s fees, arising out of or in
@@ -141,8 +142,35 @@ export default function TermsOfUsePage() {
         <h2>8. Governing Law and Jurisdiction:</h2>
         <p>
           These Terms of Use shall be governed by and construed in accordance
-          with the laws. Any disputes arising out of or in connection with these
-          terms shall be subject to the exclusive jurisdiction of the courts.
+          with the laws of India. Any disputes arising out of or in connection with
+          these terms shall be subject to the exclusive jurisdiction of the courts at
+          [Your City], India.
+        </p>
+        <h2>9. India-Specific Provisions:</h2>
+        <p>
+          Riti Vastra is an e-commerce platform compliant with the Consumer Protection
+          (E-Commerce) Rules, 2020, the Information Technology Act, 2000, and the Legal
+          Metrology Act, 2009. All prices displayed are inclusive of GST as applicable.
+          The country of origin and HSN codes are disclosed on each product page and invoice.
+        </p>
+        <h2>10. Cancellation, Returns and Refunds:</h2>
+        <p>
+          Orders may be cancelled before dispatch by contacting our customer support.
+          Returns and exchanges are accepted within 7 days of delivery for unused,
+          unwashed items with original tags. Refunds are processed to the original payment
+          method within 7-10 working days of receipt of returned items. Custom-made or
+          altered products are not eligible for return.
+        </p>
+        <h2>11. Contact and Grievances:</h2>
+        <p>
+          For any concerns regarding these terms, please contact:
+        </p>
+        <p>
+          Email: support@ritivastra.com
+          <br />
+          WhatsApp: +91-XXXXXXXXXX
+          <br />
+          Grievance Officer: grievance@ritivastra.com
         </p>
       </LayoutColumn>
     </Layout>

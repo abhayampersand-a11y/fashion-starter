@@ -17,15 +17,15 @@ export const NewsletterForm: React.FC<{ className?: string }> = ({
 
   return (
     <div className={className}>
-      <h2 className="text-md md:text-lg mb-2 md:mb-1">Join our newsletter</h2>
+      <h2 className="text-md md:text-lg mb-2 md:mb-1">Join the Riti Vastra family</h2>
       {isSubmitted ? (
         <p className="max-md:text-xs">
-          Thank you for subscribing to our newsletter!
+          Thank you for subscribing! Check your inbox for your ₹100 welcome coupon.
         </p>
       ) : (
         <>
           <p className="max-md:text-xs mb-4">
-            We will also send you our discount coupons!
+            Get ₹100 off your first order, plus early access to new drops and festive sales.
           </p>
           <Form
             onSubmit={() => {

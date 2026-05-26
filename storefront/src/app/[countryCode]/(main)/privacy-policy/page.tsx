@@ -4,8 +4,9 @@ import { listRegions } from "@lib/data/regions"
 import { Layout, LayoutColumn } from "@/components/Layout"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Learn how we protect your privacy",
+  title: "Privacy Policy | Riti Vastra",
+  description:
+    "Riti Vastra Privacy Policy — how we collect, use, and protect your personal information under the Information Technology Act, 2000 and Consumer Protection Rules.",
 }
 export async function generateStaticParams() {
   const countryCodes = await listRegions().then((regions: StoreRegion[]) =>
@@ -36,7 +37,7 @@ export default function PrivacyPolicyPage() {
         end={{ base: 13, lg: 11, xl: 10 }}
       >
         <h1 className="text-lg md:text-2xl mb-16 md:mb-25">
-          Privacy Policy for Sofa Society
+          Privacy Policy for Riti Vastra
         </h1>
       </LayoutColumn>
       <LayoutColumn
@@ -45,11 +46,13 @@ export default function PrivacyPolicyPage() {
         className="article"
       >
         <p>
-          At Sofa Society, we value your privacy and are committed to protecting
-          your personal information. This Privacy Policy outlines how we
-          collect, use, disclose, and safeguard your data when you interact with
-          our website, services, and products. By using our platform, you
-          consent to the practices described in this policy.
+          At Riti Vastra, we value your privacy and are committed to protecting
+          your personal information in accordance with the Information Technology Act, 2000,
+          the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011,
+          and the Consumer Protection (E-Commerce) Rules, 2020. This Privacy Policy
+          outlines how we collect, use, disclose, and safeguard your data when you
+          interact with our website, services, and products. By using our platform,
+          you consent to the practices described in this policy.
         </p>
         <h2>1. Information We Collect:</h2>
         <p>
@@ -66,7 +69,8 @@ export default function PrivacyPolicyPage() {
             Payment information (credit/debit card details) for completing
             transactions securely.
           </li>
-          <li>Personal preferences and fashion interests you share with us.</li>
+          <li>Phone number (with country code +91) for order updates and OTP verification.</li>
+          <li>Personal preferences, sizes, and fashion interests you share with us.</li>
         </ul>
         <p>
           Additionally, we may automatically collect certain information when
@@ -157,16 +161,38 @@ export default function PrivacyPolicyPage() {
           reasons. We will notify you of any material changes via email or by
           prominently posting a notice on our website.
         </p>
-        <h2>9. Contact Us:</h2>
+        <h2>9. Grievance Officer (As per IT Rules, 2011):</h2>
         <p>
-          If you have any questions, concerns, or requests regarding this
-          Privacy Policy or how we handle your personal information, please
-          contact us at:
+          In compliance with the Information Technology Act, 2000 and the Consumer
+          Protection (E-Commerce) Rules, 2020, the contact details of our Grievance
+          Officer are provided below:
         </p>
         <p>
-          Email: privacy@sofasociety.com
+          Name: [Grievance Officer Name]
           <br />
-          Address: Skärgårdsvägen 12, 124 55 Stockholm
+          Email: grievance@ritivastra.com
+          <br />
+          Phone: +91-XXXXXXXXXX
+          <br />
+          Hours: Monday to Friday, 10:00 AM to 6:00 PM IST
+        </p>
+        <p>
+          We aim to acknowledge complaints within 24 hours and resolve them within
+          15 days of receipt, in line with applicable regulations.
+        </p>
+        <h2>10. Contact Us:</h2>
+        <p>
+          If you have any questions, concerns, or requests regarding this Privacy
+          Policy or how we handle your personal information, please contact us at:
+        </p>
+        <p>
+          Email: privacy@ritivastra.com
+          <br />
+          WhatsApp: +91-XXXXXXXXXX
+          <br />
+          Address: [Your Registered Business Address], India
+          <br />
+          GSTIN: [Your GSTIN]
         </p>
       </LayoutColumn>
     </Layout>

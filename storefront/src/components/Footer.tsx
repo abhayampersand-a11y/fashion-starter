@@ -26,10 +26,10 @@ export const Footer: React.FC = () => {
             <div className="flex flex-1 max-lg:w-full max-lg:order-2 max-sm:flex-col justify-between sm:gap-30 lg:gap-20 md:items-center">
               <div className="max-w-35 md:flex-1 max-md:mb-9">
                 <h1 className="text-lg md:text-xl mb-2 md:mb-6 leading-none md:leading-[0.9]">
-                  Sofa Society Co.
+                  Riti Vastra
                 </h1>
                 <p className="text-xs">
-                  &copy; {new Date().getFullYear()}, Sofa Society
+                  &copy; {new Date().getFullYear()}, Riti Vastra
                 </p>
               </div>
               <div className="flex gap-10 xl:gap-18 max-md:text-xs flex-1 justify-between lg:justify-center">
@@ -38,44 +38,56 @@ export const Footer: React.FC = () => {
                     <LocalizedLink href="/">FAQ</LocalizedLink>
                   </li>
                   <li>
-                    <LocalizedLink href="/">Help</LocalizedLink>
+                    <LocalizedLink href="/">Size Guide</LocalizedLink>
                   </li>
                   <li>
-                    <LocalizedLink href="/">Delivery</LocalizedLink>
+                    <LocalizedLink href="/">Shipping</LocalizedLink>
                   </li>
                   <li>
-                    <LocalizedLink href="/">Returns</LocalizedLink>
+                    <LocalizedLink href="/">Returns &amp; Exchange</LocalizedLink>
+                  </li>
+                  <li>
+                    <LocalizedLink href="/">Track Order</LocalizedLink>
                   </li>
                 </ul>
                 <ul className="flex flex-col gap-6 md:gap-3.5">
                   <li>
                     <a
-                      href="https://www.instagram.com/agiloltd/"
+                      href="https://www.instagram.com/"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Instagram
                     </a>
                   </li>
                   <li>
-                    <a href="https://tiktok.com" target="_blank">
-                      TikTok
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+                      Facebook
                     </a>
                   </li>
                   <li>
-                    <a href="https://pinterest.com" target="_blank">
+                    <a href="https://pinterest.com" target="_blank" rel="noreferrer">
                       Pinterest
                     </a>
                   </li>
                   <li>
-                    <a href="https://facebook.com" target="_blank">
-                      Facebook
+                    <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer">
+                      WhatsApp
                     </a>
                   </li>
                 </ul>
                 <ul className="flex flex-col gap-6 md:gap-3.5">
                   <li>
+                    <LocalizedLink href="/about">About Us</LocalizedLink>
+                  </li>
+                  <li>
                     <LocalizedLink href="/privacy-policy">
                       Privacy Policy
+                    </LocalizedLink>
+                  </li>
+                  <li>
+                    <LocalizedLink href="/terms-of-use">
+                      Terms of Use
                     </LocalizedLink>
                   </li>
                   <li>
@@ -84,9 +96,7 @@ export const Footer: React.FC = () => {
                     </LocalizedLink>
                   </li>
                   <li>
-                    <LocalizedLink href="/terms-of-use">
-                      Terms of Use
-                    </LocalizedLink>
+                    <LocalizedLink href="/">Cancellation Policy</LocalizedLink>
                   </li>
                 </ul>
               </div>

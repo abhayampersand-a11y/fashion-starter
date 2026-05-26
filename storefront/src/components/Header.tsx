@@ -40,12 +40,13 @@ export const Header: React.FC = async () => {
           <LayoutColumn>
             <div className="flex justify-between items-center h-18 md:h-21">
               <h1 className="font-medium text-md">
-                <LocalizedLink href="/">SofaSocietyCo.</LocalizedLink>
+                <LocalizedLink href="/">Riti Vastra</LocalizedLink>
               </h1>
               <div className="flex items-center gap-8 max-md:hidden">
-                <LocalizedLink href="/about">About</LocalizedLink>
-                <LocalizedLink href="/inspiration">Inspiration</LocalizedLink>
                 <LocalizedLink href="/store">Shop</LocalizedLink>
+                <LocalizedLink href="/categories/ethnic-wear">Ethnic Wear</LocalizedLink>
+                <LocalizedLink href="/categories/western-wear">Western Wear</LocalizedLink>
+                <LocalizedLink href="/categories/sale">Sale</LocalizedLink>
               </div>
               <div className="flex items-center gap-3 lg:gap-6 max-md:hidden">
                 <RegionSwitcher

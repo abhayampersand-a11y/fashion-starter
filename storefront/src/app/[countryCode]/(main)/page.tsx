@@ -7,9 +7,18 @@ import { LocalizedLink } from "@/components/LocalizedLink"
 import { CollectionsSection } from "@/components/CollectionsSection"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Riti Vastra — Women's Fashion | Sarees, Kurtas, Lehengas, Dresses",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "Shop the finest women's fashion online — sarees, kurtas, lehengas, dresses, and more. Crafted in India, designed for the modern Indian woman. Free shipping above ₹999. COD available.",
+}
+
+const isInternalProductType = (value: string) => {
+  const lower = value.toLowerCase()
+  return (
+    lower.includes("gst") ||
+    lower.startsWith("apparel-") ||
+    lower.startsWith("_")
+  )
 }
 
 const ProductTypesSection: React.FC = async () => {
@@ -23,12 +32,20 @@ const ProductTypesSection: React.FC = async () => {
     return null
   }
 
+  const visibleTypes = productTypes.productTypes.filter(
+    (t) => !isInternalProductType(t.value)
+  )
+
+  if (visibleTypes.length === 0) {
+    return null
+  }
+
   return (
     <Layout className="mb-26 md:mb-36 max-md:gap-x-2">
       <LayoutColumn>
         <h3 className="text-md md:text-2xl mb-8 md:mb-15">Our products</h3>
       </LayoutColumn>
-      {productTypes.productTypes.map((productType, index) => (
+      {visibleTypes.map((productType, index) => (
         <LayoutColumn
           key={productType.id}
           start={index % 2 === 0 ? 1 : 7}
@@ -74,7 +91,7 @@ export default async function Home({
           src="/images/content/living-room-gray-armchair-two-seater-sofa.png"
           width={2880}
           height={1500}
-          alt="Living room with gray armchair and two-seater sofa"
+          alt="Riti Vastra — Women's Fashion Collection"
           className="md:h-screen md:object-cover"
         />
       </div>
@@ -82,15 +99,15 @@ export default async function Home({
         <Layout className="mb-26 md:mb-36">
           <LayoutColumn start={1} end={{ base: 13, md: 8 }}>
             <h3 className="text-md max-md:mb-6 md:text-2xl">
-              Elevate Your Living Space with Unmatched Comfort & Style
+              Where Tradition Meets Today — Curated Women&apos;s Fashion for Every Indian Story
             </h3>
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
             <div className="flex items-center h-full">
               <div className="md:text-md">
-                <p>Discover Your Perfect Sofa Today</p>
+                <p>From Sarees to Streetwear — Discover Your Style</p>
                 <LocalizedLink href="/store" variant="underline">
-                  Explore Now
+                  Shop the Collection
                 </LocalizedLink>
               </div>
             </div>
@@ -101,20 +118,19 @@ export default async function Home({
         <Layout>
           <LayoutColumn className="col-span-full">
             <h3 className="text-md md:text-2xl mb-8 md:mb-16">
-              About Sofa Society
+              About Riti Vastra
             </h3>
             <Image
               src="/images/content/gray-sofa-against-concrete-wall.png"
               width={2496}
               height={1400}
-              alt="Gray sofa against concrete wall"
+              alt="Riti Vastra craftsmanship"
               className="mb-8 md:mb-16 max-md:aspect-[3/2] max-md:object-cover"
             />
           </LayoutColumn>
           <LayoutColumn start={1} end={{ base: 13, md: 7 }}>
             <h2 className="text-md md:text-2xl">
-              At Sofa Society, we believe that a sofa is the heart of every
-              home.
+              At Riti Vastra, we believe every Indian woman deserves clothing as unique as her story.
             </h2>
           </LayoutColumn>
           <LayoutColumn
@@ -124,15 +140,13 @@ export default async function Home({
           >
             <div className="md:text-md">
               <p className="mb-5 md:mb-9">
-                We are dedicated to delivering high-quality, thoughtfully
-                designed sofas that merge comfort and style effortlessly.
+                We bring together heritage Indian craftsmanship and contemporary silhouettes — from hand-embroidered sarees and bridal lehengas to everyday cotton kurtas and modern western edits.
               </p>
               <p className="mb-5 md:mb-3">
-                Our mission is to transform your living space into a sanctuary
-                of relaxation and beauty, with products built to last.
+                Every piece is crafted by Indian artisans, designed for Indian body types, and made to last. Free shipping above ₹999 with cash on delivery available across India.
               </p>
               <LocalizedLink href="/about" variant="underline">
-                Read more about Sofa Society
+                Read more about Riti Vastra
               </LocalizedLink>
             </div>
           </LayoutColumn>

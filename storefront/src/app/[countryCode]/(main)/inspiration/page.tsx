@@ -7,8 +7,9 @@ import { LocalizedLink } from "@/components/LocalizedLink"
 import { CollectionsSection } from "@/components/CollectionsSection"
 
 export const metadata: Metadata = {
-  title: "Inspiration",
-  description: "Get inspired by our latest collections",
+  title: "Style Inspiration | Riti Vastra",
+  description:
+    "Discover style inspiration from Riti Vastra — sarees, lehengas, kurtas, and contemporary edits styled for every occasion.",
 }
 
 export async function generateStaticParams() {
@@ -48,34 +49,34 @@ export default function InspirationPage() {
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, md: 8 }}>
             <h3 className="text-md mb-6 md:mb-16 md:text-2xl">
-              The Astrid Curve sofa is a masterpiece of minimalism and luxury.
+              Bridal couture — woven by hand, worn for a lifetime.
             </h3>
             <div className="md:text-md max-md:mb-16 max-w-135">
               <p>
-                Our design philosophy revolves around creating pieces that are
-                both beautiful and practical. Inspired by Scandinavian
-                simplicity, modern luxury, and timeless classics.
+                Our bridal edit celebrates the rituals and craft of Indian weddings —
+                hand-embroidered lehengas, regal Anarkalis, and statement sarees
+                designed to be heirlooms, not just outfits.
               </p>
             </div>
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
-            <LocalizedLink href="/products/astrid-curve">
+            <LocalizedLink href="/collections/bridal">
               <Image
                 src="/images/content/dark-gray-three-seater-sofa.png"
                 width={768}
                 height={572}
-                alt="Dark gray three-seater sofa"
+                alt="Bridal lehenga inspiration"
                 className="mb-4 md:mb-6"
               />
               <div className="flex justify-between">
                 <div>
-                  <p className="mb-1">Astrid Curve</p>
+                  <p className="mb-1">Bridal Collection</p>
                   <p className="text-grayscale-500 text-xs">
-                    Scandinavian Simplicity
+                    Hand-embroidered, made to remember
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold">1500€</p>
+                  <p className="font-semibold">From ₹15,999</p>
                 </div>
               </div>
             </LocalizedLink>
@@ -91,58 +92,57 @@ export default function InspirationPage() {
           </LayoutColumn>
           <LayoutColumn start={1} end={{ base: 13, md: 8 }}>
             <h3 className="text-md mb-6 md:mb-16 md:text-2xl">
-              Haven Sofas have minimalistic designs, neutral colors, and
-              high-quality textures.
+              Everyday essentials — comfort that doesn&apos;t compromise on style.
             </h3>
             <div className="md:text-md max-md:mb-16 max-w-135">
               <p>
-                Perfect for those who seek comfort with a clean and understated
-                aesthetic. This collection brings the essence of Scandinavian
-                elegance to your living room.
+                Soft cotton kurtas, breathable cotton-rayon kurtis, and easy-to-wear
+                co-ord sets — the everyday edit for Indian women on the move.
+                From morning meetings to weekend brunches, get versatile pieces that move with you.
               </p>
             </div>
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
             <LocalizedLink
-              href="/products/nordic-haven"
+              href="/collections/new-arrivals"
               className="mb-8 md:mb-16 inline-block"
             >
               <Image
                 src="/images/content/gray-three-seater-sofa.png"
                 width={768}
                 height={572}
-                alt="Gray three-seater sofa"
+                alt="New arrivals kurta edit"
                 className="mb-4 md:mb-6"
               />
               <div className="flex justify-between">
                 <div>
-                  <p className="mb-1">Nordic Haven</p>
+                  <p className="mb-1">New Arrivals</p>
                   <p className="text-grayscale-500 text-xs">
-                    Scandinavian Simplicity
+                    Fresh styles every week
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold">1500€</p>
+                  <p className="font-semibold">From ₹999</p>
                 </div>
               </div>
             </LocalizedLink>
-            <LocalizedLink href="/products/nordic-breeze">
+            <LocalizedLink href="/collections/under-999">
               <Image
                 src="/images/content/gray-arm-chair.png"
                 width={768}
                 height={572}
-                alt="Gray arm chair"
+                alt="Under 999 affordable edit"
                 className="mb-4 md:mb-6"
               />
               <div className="flex justify-between">
                 <div>
-                  <p className="mb-1">Nordic Breeze</p>
+                  <p className="mb-1">Under ₹999</p>
                   <p className="text-grayscale-500 text-xs">
-                    Scandinavian Simplicity
+                    Wardrobe refresh, wallet-friendly
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold">1200€</p>
+                  <p className="font-semibold">From ₹499</p>
                 </div>
               </div>
             </LocalizedLink>
@@ -158,35 +158,34 @@ export default function InspirationPage() {
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, md: 8 }}>
             <h3 className="text-md mb-6 md:mb-16 md:text-2xl">
-              Oslo Drift is infused with playful textures and vibrant patterns
-              with eclectic vibes.
+              Festive edit — lights, colour, and celebration.
             </h3>
             <div className="md:text-md max-md:mb-16 max-w-135">
               <p>
-                Whether you&apos;re looking for bold statement pieces or subtle
-                elegance, this collection elevates your home with a touch of
-                glamour, sophistication, and unmatched coziness.
+                From Diwali nights to Karwa Chauth mornings, our festive collection
+                brings together hand-embroidered lehengas, regal Anarkalis, and
+                statement sarees. Crafted for the moments that matter most.
               </p>
             </div>
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
-            <LocalizedLink href="/products/oslo-drift">
+            <LocalizedLink href="/collections/festive-edit">
               <Image
                 src="/images/content/white-two-seater-sofa.png"
                 width={768}
                 height={572}
-                alt="White two-seater sofa"
+                alt="Festive edit inspiration"
                 className="mb-4 md:mb-6"
               />
               <div className="flex justify-between">
                 <div>
-                  <p className="mb-1">Oslo Drift</p>
+                  <p className="mb-1">Festive Edit</p>
                   <p className="text-grayscale-500 text-xs">
-                    Scandinavian Simplicity
+                    Sparkle through every celebration
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold">1500€</p>
+                  <p className="font-semibold">From ₹2,999</p>
                 </div>
               </div>
             </LocalizedLink>

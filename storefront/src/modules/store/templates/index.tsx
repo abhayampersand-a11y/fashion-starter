@@ -11,6 +11,15 @@ import { getProductTypesList } from "@lib/data/product-types"
 import PaginatedProducts from "@modules/store/templates/paginated-products"
 import { getRegion } from "@lib/data/regions"
 
+const isInternalProductType = (value: string) => {
+  const lower = value.toLowerCase()
+  return (
+    lower.includes("gst") ||
+    lower.startsWith("apparel-") ||
+    lower.startsWith("_")
+  )
+}
+
 const StoreTemplate = async ({
   sortBy,
   collection,
@@ -48,7 +57,9 @@ const StoreTemplate = async ({
         )}
         category={category}
         types={Object.fromEntries(
-          types.productTypes.map((t) => [t.value, t.value])
+          types.productTypes
+            .filter((t) => !isInternalProductType(t.value))
+            .map((t) => [t.value, t.value])
         )}
         type={type}
         sortBy={sortBy}

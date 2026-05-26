@@ -12,6 +12,15 @@ import { getCategoriesList } from "@lib/data/categories"
 import { getProductTypesList } from "@lib/data/product-types"
 import { getRegion } from "@lib/data/regions"
 
+const isInternalProductType = (value: string) => {
+  const lower = value.toLowerCase()
+  return (
+    lower.includes("gst") ||
+    lower.startsWith("apparel-") ||
+    lower.startsWith("_")
+  )
+}
+
 export default async function CollectionTemplate({
   sortBy,
   collection,
@@ -89,7 +98,9 @@ export default async function CollectionTemplate({
         )}
         category={category}
         types={Object.fromEntries(
-          types.productTypes.map((t) => [t.value, t.value])
+          types.productTypes
+            .filter((t) => !isInternalProductType(t.value))
+            .map((t) => [t.value, t.value])
         )}
         type={type}
       />
